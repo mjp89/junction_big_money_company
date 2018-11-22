@@ -1,0 +1,48 @@
+/* Junction 2018 */
+/* Please use BEM naming because we don't have modules: component-name__title, component-name__field-in-component */
+
+html {
+    font-size: 10px; /* 10px = 1rem, base font-size 1.6rem = 16px */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0; /* Remove html default margin */
+}
+
+.header {
+    display: flex;
+    height: 35rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #1e3c72;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.raised-banner {
+    display: flex;
+    margin: -11rem auto 0;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e3c72;
+    max-width: 70rem;
+    min-height: 20rem;
+}
+
+.raised-banner h1 {
+    color: #fff;
+}
+
+.raised-banner h1::after {
+    content: 'Hello Junction 2018';
+    position: absolute;
+    color: #1d3c73;
+    left: 50%;
+    font-size: 4.7rem;
+    transform: translate(-50%, 3%);
+}
