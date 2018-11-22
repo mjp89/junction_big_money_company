@@ -1,0 +1,43 @@
+/* Some colour palette:
+    Primary: #68C3D4;
+    secondary: #568EA3;
+    peach: #FFE8D1;
+*/
+
+/* Always! use button element. Not <div class="button"></div> */
+/* BUTTONS */
+button {
+    font-size: 1.6rem;
+    background-color: none;
+    padding: 1rem 1.6rem;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.primary,
+input {
+    border-color: #68C3D4;
+}
+button.secondary, {
+    border-color: #568EA3;
+}
+button.peach {
+    border-color: #FFE8D1;
+}
+
+button:hover {
+    background-color: #f5fafb;
+}
+
+/* INPUTS */
+input {
+    border-width: 3px;
+    border-radius: 6px;
+    padding: 2rem;
+    border-style: solid;
+    min-width: 30rem; /* Change if needed */
+    font-size: 1.6rem;
+}

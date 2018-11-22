@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/font-properties.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
     <div class="header">
@@ -15,6 +16,16 @@
     <div class="content">
         <div class="raised-banner">
             <h1>Hello Junction 2018</h1>
+        </div>
+        <!-- Written in inline styles because should be removed -->
+        <div style="display: flex; margin: 5rem auto; justify-content: space-between;max-width: 700px;">
+            <button class="primary">Primary</button>
+            <button class="secondary">Secondary</button>
+            <button class="peach">Peach</button>
+        </div>
+        <div style="display: flex; margin: 5rem auto; justify-content: space-between;max-width: 700px;">
+            <input type="text" />
+            <input type="number" />
         </div>
     </div>
     <div class="footer">
