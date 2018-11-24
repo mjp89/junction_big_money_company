@@ -40,5 +40,4 @@ $(function () {
         crowdWanted = Math.round(crowdWanted * agePercentage);
         $("#estimate").text(crowdWanted);
     }
-
-});
+}); 

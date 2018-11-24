@@ -33,6 +33,21 @@ body {
     color: #888;
 }
 
+.filtters__wrapper__timeFrame span.filters__divider {
+    display: inline-block;
+    margin: 0 2rem;
+    vertical-align: sub;
+    font-size: 4rem;
+}
+
+.results__wrapper {
+    display: inline-block;
+    margin: 0 2rem;
+    border: 5px solid red;
+    width: 20rem;
+    position: absolute;
+}
+
 .summary {
     position: fixed;
     display: flex;
@@ -56,14 +71,48 @@ body {
     flex-direction: column;
 }
 
-.value__label {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #00e086;
+.ball {
+  height: 25px;
+  width: 25px;
+  background-image: linear-gradient(to top, #990ae3 0%, #fbc2eb 100%);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  transform-origin: center;
+  animation: createActionMarker .25s;
 }
 
-.value__number {
-    font-size: 4rem;
+.ball-info-box {
+    height: 25px;
+    width: 40px;
+    border: 1px solid black;
+    position: absolute;
+    top:55px;
+    left: 105px;
+    border-radius: 6px;
+    animation: createActionMarker .25s;
+}
+
+.ball-info-box p{
+    position: relative;
+    top: 50%;
+    transform-origin: center;
+    transform: translateY(-50%); 
+    text-align:center;
+    margin:auto;
+}
+
+.ball-info-line {
+    animation: createActionMarker .25s;
+}
+
+@keyframes createActionMarker {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .summary__footer button {
