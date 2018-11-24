@@ -16,6 +16,8 @@ button {
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+    background-color: #c0F;
+    color: #FFF;
 }
 
 button.primary,
@@ -30,7 +32,7 @@ button.peach {
 }
 
 button:hover {
-    background-color: #f5fafb;
+    background-color: #00e086;
 }
 
 /* INPUTS */
@@ -42,4 +44,65 @@ input {
     border-style: solid;
     min-width: 20rem; /* Change if needed */
     font-size: 1.6rem;
+}
+
+.radio-button-group > ul {
+    padding: 0;
+}
+
+.radio-button-group > ul > li {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    list-style: none;
+}
+
+.radio-button-group > ul > li > label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    width: 40rem;
+    position: relative;
+}
+
+.slider__track {
+    -webkit-appearance: none;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border: none;
+    padding: 0;
+    width: 100%;    
+}
+
+.slider__value {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.slider__track::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #c0F;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+
+.slider__labels {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 0 .5rem;
 }

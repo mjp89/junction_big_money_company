@@ -25,18 +25,10 @@ body {
 }
 
 .container {
+    position: relative;
     padding: 5rem;
 }
 
-/* Block on maps right hand side */
-.map__details {
-    position: absolute;
-    height: 80%;
-    background-color: #eaeaea;
-    right: 5rem;
-    width: 35rem;
-    padding: 2rem;
-}
 
 .filtters__wrapper {
     margin-bottom: 5rem;
@@ -57,4 +49,47 @@ body {
     margin: 0 2rem;
     vertical-align: sub;
     font-size: 4rem;
+}
+
+.summary {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 1rem;
+    right: 1rem;
+    width: 30rem;
+    background: #fff;
+    padding: 2rem;
+}
+
+.summary > div {
+    margin-bottom: 1.5rem;
+}
+
+.summary__locations span {
+    font-size: 1.6rem;
+    padding: 10px;
+    border-radius: 25px;
+    line-height: 5rem;
+    background-color: #00e086;
+    color: #fff;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+}
+
+.value__label {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00e086;
+}
+
+.value__number {
+    font-size: 4rem;
+}
+
+.summary__footer button {
+    width: 100%;
 }

@@ -12,39 +12,116 @@
 </head>
 <body>
     <div class="map">
-        <!-- Map content here -->
-        <div class="map__details">
-            <h3>Details</h3>
-        </div>
+        <!-- map here -->
     </div>
     <div class="container">
+        <h1>Select your crowd</h1>
+        <!-- RANGE -->
         <div class="filtters__wrapper">
-            <h1>Settings</h1>
-            <!-- Filters__title -->
-            <h2>Range<h2> / <h3>Amount of people in the area</h3>
-            <p>A event is triggered only when value is reached</p>
-            <div class="slidecontainer">
-                <input type="range" id="" min="1" max="100000" value="50" step="30" class="slider">
+            <h2>Range /<h2><h3>/ Amount of people in the area</h3>
+                <p>A event is triggered only when value is reached</p>
+                <div class="slider">
+                    <output name="amount" id="amount" class="slider__value" for="crowdSlider">0</output>
+                    <input type="range"
+                            id="crowdSlider"
+                            min="0"
+                            max="80000"
+                            value="50"
+                            step="100"
+                            class="slider__track"
+                            oninput="amount.value=crowdSlider.value">
+                    <span id="sliderValueText"></span>
+                    <div class="slider__labels">
+                        <label>0</label>
+                        <label>80 000</label>
+                    </div>
+                </div>
             </div>
-         </div>
-        <!-- .~Range -->
+        <!-- DATE -->
         <div class="filtters__wrapper">
-            <h2>Date<h2> / <h3>One day or date span</h3>
-            <p>What day(s) should the trigger occur</p>
+            <h2>Date /<h2><h3>/ Day or days</h3>
+            <p>When should the trigger occur</p>
             <div class="filtters__wrapper__timeFrame">
                 <input type="date" id="startDate">
                 <span class="filters__divider"> - </span>
                 <input type="date" id="endDate">
             </div>
         </div>
-        <!-- .~Time -->
+        <!-- TIME -->
         <div class="filtters__wrapper">
-            <h2>Time <h2>/<h3> Timeframe</h3>
+            <h2>Time /<h2><h3>/ O'clock</h3>
             <p>A event is triggered between timeframe</p>
             <div class="filtters__wrapper__timeFrame">
                 <input type="time" id="startTime">
                 <span class="filters__divider"> - </span>
                 <input type="time" id="endTime">
+            </div>
+        </div>
+        <!-- GENDER -->
+        <div class="filtters__wrapper">
+            <h2>Gender /<h2><h3>/ Who?</h3>
+            <p></p>
+            <form class="radio-button-group" action="">
+                <ul>
+                    <li>
+                        <input type="radio" name="gender" value="female">
+                        <label>Female</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="gender" value="male">
+                        <label>Male</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="gender" value="all">
+                        <label>All</label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <!-- PREPAID -->
+        <div class="filtters__wrapper">
+            <h2>Prepaid /<h2><h3>/ Contract type</h3>
+            <p>Target only or exclude prepaid numbers. Remember tourists!</p>
+            <form class="radio-button-group" action="">
+                <ul>
+                    <li>
+                        <input type="radio" name="prepaid" value="include" checked>
+                        <label>Include</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="prepaid" value="exclude">
+                        <label>Exclude</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="prepaid" value="only">
+                        <label>Only prepaid numbers</label>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <!-- Summary -->
+        <div class="summary">
+            <h1>Order summary</h1>
+            <div class="summary__locations">
+                <span>Kamppi</span>
+                <span>Kaisaniemi</span>
+                <span>Rautatientori</span>
+                <span>Hakaniemi</span>
+            </div>
+            <div class="value">
+                <span class="value__number">12029</span>
+                <span class="value__label">Crowd</span>
+            </div>
+            <div class="value">
+                <span class="value__number">52/48</span>
+                <span class="value__label">Gender F/M</span>
+            </div>
+            <div class="value">
+                <span class="value__number">28.5</span>
+                <span class="value__label">Average Age</span>
+            </div>
+            <div class="summary__footer">
+                <button class="primary">Place Order</button>
             </div>
         </div>
     </div>
