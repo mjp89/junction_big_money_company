@@ -44,11 +44,16 @@ body {
 .map-details {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     height: 100%;
     padding: 3rem;
     background-image: linear-gradient(to right, #000 0%, #c0f 100%);
+}
 
+.map-details__data-wrapper {
+    display: flex;
+    justify-content: center;
+    
 }
 
 .map-details__values {

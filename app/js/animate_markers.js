@@ -8,14 +8,6 @@ $(function() {
     var centerX = offset.left + width / 2;
     var centerY = offset.top + height / 2;
 
-    /*const markerpoints = [
-        {x: 35, y: 35, price: 50},
-        {x: 300, y: 500, price: 51},
-        {x: 100, y: 200, price: 52},
-        {x: 120, y: 800, price: 53},
-        {x: 500, y: 50, price: 54}
-    ]*/
-
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -24,8 +16,8 @@ $(function() {
         console.log("x: " + x);
         console.log("y: " + y);
         console.log("draw marker");
-        const ball = "<div class='ball' style='top:" + x + "px;left:" + y + "px;'></div>";
-        const infoBox = "<div class='ball-info-box' style='top:" + (x-30) + "px;left:" + (y+15) + "px;'><p>" + price + "€</p></div>";
+        const ball = "<div class='ball' style='top:" + y + "px;left:" + x + "px;'></div>";
+        const infoBox = "<div class='ball-info-box' style='top:" + (y-30) + "px;left:" + (x+15) + "px;'><p>" + price + "€</p></div>";
         $('body').append(ball, infoBox);
     }
 
@@ -58,34 +50,19 @@ $(function() {
         var centerX = offset.left + width / 2;
         var centerY = offset.top + height / 2;
 
-      //  let markerpoints = [];
-       // for (let index = 0; index < number_of_points; index++) {
-       //     markerpoints.push({
-       //         "x": Math.floor(Math.random() * (centerX+50) - (centerX-50) + 1) + (centerY-50),
-       //         "y": Math.floor(Math.random() * ((centerY+50) - (centerY-50)) + 1) + (centerY-50),
-       //         "price": 50
-      //      });
-     //   }
-        //return [{"x": centerX, "y": centerY, "price": 50}, ...markerpoints]
         const markerpoints = [
-            {x: centerX, y: centerY, price: 50},
-            {x: 35, y: 35, price: 50},
-            {x: 400, y: 400, price: 51},
-            {x: 400, y: 400, price: 52},
-            {x: 420, y: 400, price: 53},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54},
-            {x: 400, y: 400, price: 54}
+            {x: 660, y: 500, price: 50},
+            {x: 630, y: 470, price: 51},
+            {x: 640, y: 420, price: 52},
+            {x: 645, y: 450, price: 53},
+            {x: 620, y: 410, price: 54},
+            {x: 732, y: 500, price: 54},
+            {x: 720, y: 550, price: 54},
+            {x: 620, y: 430, price: 54},
+            {x: 710, y: 570, price: 54},
+            {x: 645, y: 470, price: 53},
+            {x: 620, y: 510, price: 54},
+            {x: 732, y: 500, price: 54}
         ]
         return markerpoints; 
     }

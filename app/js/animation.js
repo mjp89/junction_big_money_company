@@ -1,7 +1,7 @@
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
+    zoom: 12,
     center: { lat: 60.192059, lng: 24.945831 },
   });
   shp("shape_activity/Shapefiles-20181124T090813Z-001.zip").then(function (geojson) {
