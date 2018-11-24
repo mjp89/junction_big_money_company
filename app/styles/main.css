@@ -18,6 +18,12 @@ body {
     height: 100%;
 }
 
+.slogan {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00e086;
+}
+
 .filters__wrapper {
     margin-bottom: 5rem;
 }

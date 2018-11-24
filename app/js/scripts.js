@@ -25,12 +25,12 @@ $(function () {
     });
 
     function calculateEstimate() {
-        if (cpm <= 0) {
-            return;
-        }
         if (crowdWanted <= 0) {
             return;
         } 
+        if (cpm <= 0) {
+            return;
+        }
         if (agePercentage <= 0) {
             return;
         }
