@@ -1,3 +1,7 @@
+map/shape_activity
+map/shape_footfall
+map/activity
+map/footfall
 # Logs
 logs
 *.log
