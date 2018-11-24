@@ -12,9 +12,10 @@ body {
     margin: 0; /* Remove html default margin */
 }
 
-.header {
+.map {
+    position: relative;
     display: flex;
-    height: 35rem;
+    height: 70rem;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -23,26 +24,37 @@ body {
     background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.raised-banner {
-    display: flex;
-    margin: -11rem auto 0;
-    padding: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    background-color: #1e3c72;
-    max-width: 70rem;
-    min-height: 20rem;
+.container {
+    padding: 5rem;
 }
 
-.raised-banner h1 {
-    color: #fff;
-}
-
-.raised-banner h1::after {
-    content: 'Hello Junction 2018';
+/* Block on maps right hand side */
+.map__details {
     position: absolute;
-    color: #1d3c73;
-    left: 50%;
-    font-size: 4.7rem;
-    transform: translate(-50%, 3%);
+    height: 80%;
+    background-color: #eaeaea;
+    right: 5rem;
+    width: 35rem;
+    padding: 2rem;
+}
+
+.filtters__wrapper {
+    margin-bottom: 5rem;
+}
+
+.filtters__wrapper h2,
+.filtters__wrapper h3 {
+    display: inline-block;
+}
+
+.filtters__wrapper p {
+    margin: 0 0 2rem;
+    color: #888;
+}
+
+.filtters__wrapper__timeFrame span.filters__divider {
+    display: inline-block;
+    margin: 0 2rem;
+    vertical-align: sub;
+    font-size: 4rem;
 }
