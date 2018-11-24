@@ -1,34 +1,43 @@
-$(function() {
-    const markerpoints = [
-        {x: 35, y: 35, price: 50},
-        {x: 300, y: 500, price: 51},
-        {x: 100, y: 200, price: 52},
-        {x: 120, y: 800, price: 53},
-        {x: 500, y: 50, price: 54}
-    ]
+$(function () {
+    var crowdWanted = 0;
+    var cpm = 0;
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    
-    const showMarker = (x, y, price) => {
-        const ball = "<div class='ball' style='top:" + x + "px;left:" + y + "px;'></div>";
-        const infoBox = "<div class='ball-info-box' style='top:" + (x-30) + "px;left:" + (y+15) + "px;'><p>" + price + "€</p></div>";
-        $('.container').append(ball, infoBox);
-    }
+    $("#crowdSlider").change(function (asd) {
+        crowdWanted = Number.parseFloat($(this).val());
+        calculateEstimate();
+    });
 
-    const hideMarker = () => {
-        $('.ball').hide('slow', function(){$('.ball').remove();});
-        $('.ball-info-box').hide('scale', function(){$('.ball-info-box').remove()}) 
-    }
 
-    async function mainloop() {
-        for (const point of markerpoints) {
-            showMarker(point.x, point.y, point.price);
-            await sleep(1000);
-            hideMarker();
-            await sleep(1000);
+    $("#cpm").change(function () {
+        cpm = Number.parseFloat($(this).val());
+        calculateEstimate();
+    });
+
+    var agePercentage = 0;
+    $(".age_group").click(function () {
+        agePercentage = 1;
+        $('.age_group').each(function (i, obj) {
+            if ($(obj).is(':checked')) {
+                agePercentage -= 0.05;
+            } 
+        });
+        calculateEstimate();
+    });
+
+    function calculateEstimate() {
+        if (cpm <= 0) {
+            return;
         }
+        if (crowdWanted <= 0) {
+            return;
+        } 
+        if (agePercentage <= 0) {
+            return;
+        }
+        var cpmEffect = cpm > 1 ? 1 : cpm;
+
+        crowdWanted = Math.round(crowdWanted * cpmEffect);
+        crowdWanted = Math.round(crowdWanted * agePercentage);
+        $("#estimate").text(crowdWanted);
     }
-    mainloop();
 }); 

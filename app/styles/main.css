@@ -5,6 +5,7 @@ html {
     font-size: 10px; /* 10px = 1rem, base font-size 1.6rem = 16px */
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
+    height: 100%
 }
 
 body {
@@ -14,20 +15,20 @@ body {
 
 .container {
     position: relative;
-    padding: 5rem 5rem 2.5rem;
+    padding: 5rem 15rem 2.5rem;
     height: 100%;
 }
 
-.filtters__wrapper {
+.filters__wrapper {
     margin-bottom: 5rem;
 }
 
-.filtters__wrapper h2,
-.filtters__wrapper h3 {
+.filters__wrapper h2,
+.filters__wrapper h3 {
     display: inline-block;
 }
 
-.filtters__wrapper p {
+.filters__wrapper p {
     margin: 0 0 2rem;
     color: #888;
 }
@@ -120,5 +121,5 @@ body {
 
 .footer {
     height: 5rem;
-    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    background-image: linear-gradient(to right, #000 0%, #cc01ff 100%);
 }
