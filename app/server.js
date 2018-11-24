@@ -17,7 +17,7 @@ var mime = {
 };
 
 app.get('*', function (req, res) {
-    var file = path.join(dir, req.path.replace(/\/$/, '/index.html'));
+    var file = path.join(dir, req.path.replace(/\/$/, '/public.html'));
     console.log('req' + req.path )
 
     var type = mime[path.extname(file).slice(1)] || 'text/plain';

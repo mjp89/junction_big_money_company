@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/font-properties.css">
     <link rel="stylesheet" href="styles/components.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/scripts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -17,7 +18,7 @@
         <div class="filters__wrapper">
             <h2>CPM /<h2><h3>/ Cost per thousand</h3>
             <p>What is your limit?</p>
-            <input type="number" placeholder="00">
+            <input type="number" id="cpm" placeholder="00">
         </div>
         <!-- CROWD RANGE -->
         <div class="filters__wrapper">
@@ -48,27 +49,27 @@
             <div class="checkbox-group" action="">
                 <ul>
                     <li>
-                        <input type="checkbox" name="junior" value="15-20">
+                        <input type="checkbox" name="junior" class="age_group" value="15-20">
                         <label>15-20</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="twenties" value="20-30">
+                        <input type="checkbox" name="twenties" class="age_group" value="20-30">
                         <label>20-30</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="thirties" value="30-40">
+                        <input type="checkbox" name="thirties" class="age_group" value="30-40">
                         <label>30-40</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="fourties" value="40-50">
+                        <input type="checkbox" name="fourties" class="age_group" value="40-50">
                         <label>40-50</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="thirties" value="50-60">
+                        <input type="checkbox" name="thirties" class="age_group" value="50-60">
                         <label>50-60</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="thirties" value="60-100">
+                        <input type="checkbox" name="thirties" class="age_group" value="60-100">
                         <label>60-100</label>
                     </li>
                 </ul>
@@ -111,13 +112,15 @@
         <div class="summary">
             <h1>Summary</h1>
             <div class="value">
-                <span class="value__number">12029</span>
-                <span class="value__label">Crowd</span>
+                <span class="value__number" id="estimate">0</span>
+                <span class="value__label">Reach Estimate</span>
             </div>
+            <!--
             <div class="value">
                 <span class="value__number">28.5</span>
                 <span class="value__label">Average Age</span>
             </div>
+            -->
             <div class="summary__footer">
                 <button onclick="location.href='animation.html'" type="button" class="primary">Go</button>
             </div>
