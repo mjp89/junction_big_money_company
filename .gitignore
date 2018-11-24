@@ -1,7 +1,8 @@
-map/shape_activity
-map/shape_footfall
-map/activity
-map/footfall
+shape_activity
+shape_footfall
+activity
+footfall 
+
 # Logs
 logs
 *.log
