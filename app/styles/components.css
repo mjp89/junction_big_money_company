@@ -46,18 +46,21 @@ input {
     font-size: 1.6rem;
 }
 
-.radio-button-group > ul {
+.radio-button-group > ul,
+.checkbox-group > ul {
     padding: 0;
 }
 
-.radio-button-group > ul > li {
+.radio-button-group > ul > li,
+.checkbox-group > ul > li {
     display: flex;
     flex-direction: row;
     position: relative;
     list-style: none;
 }
 
-.radio-button-group > ul > li > label {
+.radio-button-group > ul > li > label,
+.checkbox-group > ul > li > label {
     font-size: 1.6rem;
     font-weight: 600;
     margin-left: 1rem;
@@ -70,11 +73,12 @@ input {
 .slider {
     width: 40rem;
     position: relative;
+    margin-top: 3rem;
 }
 
 .slider__track {
     -webkit-appearance: none;
-    background: #d3d3d3;
+    background: #ddd;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -88,6 +92,7 @@ input {
     display: block;
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: right;
 }
 
 .slider__track::-webkit-slider-thumb {

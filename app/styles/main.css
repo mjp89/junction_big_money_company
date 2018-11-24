@@ -12,23 +12,11 @@ body {
     margin: 0; /* Remove html default margin */
 }
 
-.map {
-    position: relative;
-    display: flex;
-    height: 70rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: #1e3c72;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 .container {
     position: relative;
-    padding: 5rem;
+    padding: 5rem 5rem 2.5rem;
+    height: 100%;
 }
-
 
 .filtters__wrapper {
     margin-bottom: 5rem;
@@ -44,13 +32,6 @@ body {
     color: #888;
 }
 
-.filtters__wrapper__timeFrame span.filters__divider {
-    display: inline-block;
-    margin: 0 2rem;
-    vertical-align: sub;
-    font-size: 4rem;
-}
-
 .summary {
     position: fixed;
     display: flex;
@@ -60,19 +41,13 @@ body {
     width: 30rem;
     background: #fff;
     padding: 2rem;
+    box-shadow: 0px 0px 3px #929292;
+    border-radius: 1rem;
+    z-index: 9999;
 }
 
 .summary > div {
     margin-bottom: 1.5rem;
-}
-
-.summary__locations span {
-    font-size: 1.6rem;
-    padding: 10px;
-    border-radius: 25px;
-    line-height: 5rem;
-    background-color: #00e086;
-    color: #fff;
 }
 
 .value {
@@ -92,4 +67,9 @@ body {
 
 .summary__footer button {
     width: 100%;
+}
+
+.footer {
+    height: 5rem;
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
 }
