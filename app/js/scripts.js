@@ -2,7 +2,7 @@ $(function () {
     var crowdWanted = 0;
     var cpm = 0;
 
-    $("#crowdSlider").change(function (asd) {
+    $("#crowdSlider").change(function () {
         crowdWanted = Number.parseFloat($(this).val());
         calculateEstimate();
     });
