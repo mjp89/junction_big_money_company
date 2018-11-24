@@ -25,10 +25,18 @@ body {
 }
 
 .container {
-    position: relative;
     padding: 5rem;
 }
 
+/* Block on maps right hand side */
+.map__details {
+    position: absolute;
+    height: 80%;
+    background-color: #eaeaea;
+    right: 5rem;
+    width: 35rem;
+    padding: 2rem;
+}
 
 .filtters__wrapper {
     margin-bottom: 5rem;
@@ -51,45 +59,54 @@ body {
     font-size: 4rem;
 }
 
-.summary {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 1rem;
-    right: 1rem;
-    width: 30rem;
-    background: #fff;
-    padding: 2rem;
+.results__wrapper {
+    display: inline-block;
+    margin: 0 2rem;
+    border: 5px solid red;
+    width: 20rem;
+    position: absolute;
 }
 
-.summary > div {
-    margin-bottom: 1.5rem;
+.ball {
+  height: 25px;
+  width: 25px;
+  background-image: linear-gradient(to top, #990ae3 0%, #fbc2eb 100%);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  transform-origin: center;
+  animation: createActionMarker .25s;
 }
 
-.summary__locations span {
-    font-size: 1.6rem;
-    padding: 10px;
-    border-radius: 25px;
-    line-height: 5rem;
-    background-color: #00e086;
-    color: #fff;
+.ball-info-box {
+    height: 25px;
+    width: 40px;
+    border: 1px solid black;
+    position: absolute;
+    top:55px;
+    left: 105px;
+    border-radius: 6px;
+    animation: createActionMarker .25s;
 }
 
-.value {
-    display: flex;
-    flex-direction: column;
+.ball-info-box p{
+    position: relative;
+    top: 50%;
+    transform-origin: center;
+    transform: translateY(-50%); 
+    text-align:center;
+    margin:auto;
 }
 
-.value__label {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #00e086;
+.ball-info-line {
+    animation: createActionMarker .25s;
 }
 
-.value__number {
-    font-size: 4rem;
-}
-
-.summary__footer button {
-    width: 100%;
+@keyframes createActionMarker {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
