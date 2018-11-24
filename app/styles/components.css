@@ -5,6 +5,7 @@
 */
 
 /* Always! use button element. Not <div class="button"></div> */
+/* MArgin bottom on component level, !NOT CONTAINER/WRAPPER/ */
 /* BUTTONS */
 button {
     font-size: 1.6rem;
@@ -19,7 +20,7 @@ button {
 
 button.primary,
 input {
-    border-color: #68C3D4;
+    border-color: #c0F;
 }
 button.secondary, {
     border-color: #568EA3;
@@ -34,10 +35,11 @@ button:hover {
 
 /* INPUTS */
 input {
+    margin-bottom: 2rem;
     border-width: 3px;
     border-radius: 6px;
     padding: 2rem;
     border-style: solid;
-    min-width: 30rem; /* Change if needed */
+    min-width: 20rem; /* Change if needed */
     font-size: 1.6rem;
 }
