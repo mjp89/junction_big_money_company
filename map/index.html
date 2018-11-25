@@ -56,26 +56,62 @@
 
   <script>
 
+    function calcCrow(lat1, lon1, lat2 = 60.192059, lon2 = 24.945831) {
+      var R = 6371; // km
+      var dLat = toRad(lat2 - lat1);
+      var dLon = toRad(lon2 - lon1);
+      var lat1 = toRad(lat1);
+      var lat2 = toRad(lat2);
 
+      var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      var d = R * c;
+      //console.log(d)
+      return d < 2;
+    }
+
+    // Converts numeric degrees to radians
+    function toRad(Value) {
+      return Value * Math.PI / 180;
+    }
 
     function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 6,
         center: { lat: 60.192059, lng: 24.945831 },
       });
-      shp("shape_activity/Shapefiles-20181124T090813Z-001.zip").then(function (geojson) {
-        var data = [];
-        for (var i = geojson.features.slice(0, 2000).length - 1; i >= 0; i--) {
-          var dataset = [];
-          var geoBox = geojson.features[i].geometry.coordinates[0];
-          for (var x = geoBox.length - 1; x >= 0; x--) {
-            dataset.push(
-              { lat: geoBox[x][1], lng: geoBox[x][0] }
-            )
+      shp("shape_footfall/Shapefiles-20181124T102055Z-001.zip").then(function (geojson) {
+        var datas = [];
+        var asd = [];
+       // console.log("asd " + sliceindex + " geojson " + geojson.length);
+        var sliceindex = 0;
+        for (var y = 0; y < 10000; y++) {
+          var data;
+          try {
+            data = geojson.features.slice(sliceindex, sliceindex + 500);
+          } catch (error) {
+            console.log("Error");
+            return;
           }
-          var geometry = new google.maps.Data.Polygon([dataset]);
-          map.data.add({ geometry, feature: { asd: '1' } })
-        } 
+          console.log("asd sliceindex" + sliceindex );
+          sliceindex += 500;
+          for (var i = data.length - 1; i >= 0; i--) {
+            var dataset = [];
+            var geoBox = data[i].geometry.coordinates[0];
+            for (var x = geoBox.length - 1; x >= 0; x--) {
+              if (calcCrow(geoBox[x][1], geoBox[x][0])) {
+                dataset.push({ lat: geoBox[x][1], lng: geoBox[x][0] })
+              }
+            }
+            if (dataset.length > 0) {
+              var geometry = new google.maps.Data.Polygon([dataset]);
+              map.data.add({ geometry, feature: { asd: '1' } });
+              asd.push(data[i]);
+            }
+          }
+        }
+        console.log(asd);
         map.data.setStyle(function (feature) {
           var color = 'gray';
           if (feature.getProperty('isColorful')) {
@@ -89,7 +125,7 @@
         });
 
         map.data.addListener('click', function (event) {
-          event.feature.setProperty('isColorful', true );
+          event.feature.setProperty('isColorful', true);
         });
       })
     } 
