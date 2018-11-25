@@ -1,0 +1,31 @@
+
+.report {
+    display: flex;
+    flex-direction: column;
+}
+
+.report > .two-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* Number Value */
+.report .filters__wrapper > span {
+    font-size: 6rem;
+}
+
+/* Poikkeus */
+.report .two-col .filters__wrapper {
+    width: 50rem;
+}
+
+.report .locations .filters__wrapper {
+    margin-bottom: 2rem;
+}
+
+.report .location-sum {
+    font-size: 2rem;
+    margin: 1rem 0 0;
+    color: #000;
+}

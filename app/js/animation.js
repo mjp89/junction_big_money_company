@@ -25,72 +25,74 @@ function clear(map, data) {
   });
   //loop(map, data);
 }
+
+
 var index = 0;
 function loop(map, data) {
-  loadJSON('js/data.json', function (data2) {
-    //console.log("d")
-    clear(map, data);
-    for (var i = data.length - 1; i >= 0; i--) {
-      var dataset = [];
-      var geoBox = data[i].geometry.coordinates[0];
-      for (var x = geoBox.length - 1; x >= 0; x--) {
-        dataset.push(
-          { lat: geoBox[x][1], lng: geoBox[x][0] }
-        )
-      }
-      var el = datass[keys[index]];
-      if (!el) {
-        return;
-      }
-      var finding = el.find((e) => {
-        // j.feature.id
-        return e.id == data[i].properties.id
-      });
-     // console.log("finding " + finding);
-      
-      // Construct the polygon.
-      var bermudaTriangle = new google.maps.Polygon({
-        paths: dataset,
-        strokeColor: getRandomColor(finding ? finding.count : 1),
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#ffffff00',
-        //fillColor: getRandomColor(finding ? finding.count : 1),
-        //fillOpacity: 0.35
-      });
-      bermudaTriangle.setMap(map);
-      //   var geometry = new google.maps.Data.Polygon([dataset]);
-      //  geometry.feature = { id: data[i].properties.id }
-      // console.log("geometry");
-      // map.data.add({ geometry, fillColor: getRandomColor('blue'), })
+  //loadJSON('js/data.json', function (data2) {
+  //console.log("d")
+  clear(map, data);
+  for (var i = data.length - 1; i >= 0; i--) {
+    var dataset = [];
+    var geoBox = data[i].geometry.coordinates[0];
+    for (var x = geoBox.length - 1; x >= 0; x--) {
+      dataset.push(
+        { lat: geoBox[x][1], lng: geoBox[x][0] }
+      )
     }
-    /* map.data.setStyle(function (feature) {
-       if (feature.getProperty('isColorful')) {
-         return ({
-           fillColor: 'red',
-           strokeColor: 'red',
-           strokeWeight: 1
-         });
-       }
-       var el =  datass[keys[index]];
-      var finding = el.find((e) => {
-         // j.feature.id
-         e.id == feature.j.feature.id
-       });
-       console.log("finding " + finding);
-      // console.log("e" + el[0].id + " " + feature.j.feature.id); 
+    var el = datass[keys[index]];
+    if (!el) {
+      return;
+    }
+    var finding = el.find((e) => {
+      // j.feature.id
+      return e.id == data[i].properties.id
+    });
+    // console.log("finding " + finding);
+
+    // Construct the polygon.
+    var bermudaTriangle = new google.maps.Polygon({
+      paths: dataset,
+      strokeColor: getRandomColor(finding ? finding.count : 1),
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#ffffff00',
+      //fillColor: getRandomColor(finding ? finding.count : 1),
+      //fillOpacity: 0.35
+    });
+    bermudaTriangle.setMap(map);
+    //   var geometry = new google.maps.Data.Polygon([dataset]);
+    //  geometry.feature = { id: data[i].properties.id }
+    // console.log("geometry");
+    // map.data.add({ geometry, fillColor: getRandomColor('blue'), })
+  }
+  /* map.data.setStyle(function (feature) {
+     if (feature.getProperty('isColorful')) {
        return ({
-         fillColor: getRandomColor('blue'),
-         strokeColor: 'blue',
+         fillColor: 'red',
+         strokeColor: 'red',
          strokeWeight: 1
        });
-     });*/
-    index++;
+     }
+     var el =  datass[keys[index]];
+    var finding = el.find((e) => {
+       // j.feature.id
+       e.id == feature.j.feature.id
+     });
+     console.log("finding " + finding);
+    // console.log("e" + el[0].id + " " + feature.j.feature.id); 
+     return ({
+       fillColor: getRandomColor('blue'),
+       strokeColor: 'blue',
+       strokeWeight: 1
+     });
+   });*/
+  index++;
 
 
-  },
-    function (xhr) { console.error(xhr); }
-  );
+  //},
+  //  function (xhr) { console.error(xhr); }
+  //);
 }
 /*
 function parser() {
@@ -146,17 +148,18 @@ function getRandomColor(val) {
 }
 
 var keys = [];
-
+var day = 1;
+var crowd = 0;
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: { lat: 60.192059, lng: 24.945831 },
+    zoom: 13,
+    center: { lat: 60.189812, lng: 24.940799 },
   });
   loadJSON('js/data.json', function (data) {
     //test.push(partsOfStr)
     loadJSON('data/data3.json', function (data2) {
-      //console.log("AA " + data2[0])
-      //var datass = [];
+
+
       for (var index = 0; index < data2.length; index++) {
         var element = data2[index];
         var f = element;
@@ -167,12 +170,25 @@ function initMap() {
         }
         datass[f[1]].push({ date: f[1], id: f[0], count: f[2] });
       }
-      //console.log("d" + datass.length);
-      /// console.log ('ss' + data.find((d) => d.properties.id === partsOfStr))
-      // console.log("t" + partsOfStr[0]);
-      setInterval(function () {
-        loop(map, data);
-      }, 1000);
+      var running = false;
+      $("#start_ads").click(function () { 
+        if (running) {
+          return;
+        } 
+        running = true;
+        setInterval(function () {
+          if (day >= 31) {
+            return;
+          }
+          crowd +=  Math.floor(Math.random() * (1000 - 200 + 1) ) + 200
+          $("#running_crowd").text(crowd);
+          $("#running_date").text(day + ".1.2018");
+          day++;
+         
+          loop(map, data);
+        }, 1000);
+      });
+
     })
 
     /*

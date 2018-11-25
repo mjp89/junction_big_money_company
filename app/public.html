@@ -13,24 +13,31 @@
 </head>
 <body>
     <div class="container">
-        <h1>Select your crowd</h1>
-        <!-- RANGE -->
-        <div class="filtters__wrapper">
-            <h2>CPM /<h2><h3>/ Cost per thousand</h3>
-            <p>What is your limit?</p>
-            <input type="number" id="cpm" placeholder="00">
+        <span class="slogan">Target without targeting</span>
+        <h1>Create your crowd</h1>
+         <!-- START DATE -->
+        <div class="filters__wrapper">
+            <h2>Start Date /</h2><h3>/ When should the campaign start?</h3>
+            <p>You can time your campaign starting date</p>
+            <input type="date">
+        </div>
+        <!-- END DATE -->
+        <div class="filters__wrapper">
+            <h2>End Date /</h2><h3>/ When should the campaign end?</h3>
+            <p>This is to protect going to unwanted waters</p>
+            <input type="date">
         </div>
         <!-- CROWD RANGE -->
-        <div class="filtters__wrapper">
+        <div class="filters__wrapper">
             <h2>Range /<h2><h3>/ How many customers do you wish to reach?</h3>
-            <p>Campaign is complete when customers have been reached</p>
+            <p></p>
             <div class="slider">
                 <output name="amount" id="amount" class="slider__value" for="crowdSlider">0</output>
                 <input type="range"
                         id="crowdSlider"
                         min="0"
                         max="80000"
-                        value="50"
+                        value="0"
                         step="500"
                         class="slider__track"
                         oninput="amount.value=crowdSlider.value">
@@ -42,9 +49,21 @@
             </div>
         </div>
 
+        <!-- BUDJET -->
+        <div class="filters__wrapper">
+            <h2>Budget /</h2><h3>/ What is your advertising budget?</h3>
+            <p>This works as a roof cost, it may be less!</p>
+            <input type="number" placeholder="00">
+        </div>
+        <div class="filters__wrapper">
+            <h2>CPM /</h2><h3>/ Cost per thousand</h3>
+            <p>What is your limit?</p>
+            <input type="number" id="cpm" placeholder="00">
+        </div>
+
         <!-- AGE GROUPS -->
-        <div class="filtters__wrapper">
-            <h2>Age groups /<h2><h3>/ What groups do you want to reach?</h3>
+        <div class="filters__wrapper">
+            <h2>Age groups /</h2><h3>/ What groups do you want to reach?</h3>
             <p>Select one or multiple!</p>
             <div class="checkbox-group" action="">
                 <ul>
@@ -76,8 +95,8 @@
             </div>
         </div>
         <!-- GENDER -->
-        <div class="filtters__wrapper">
-            <h2>Gender /<h2><h3>/ Who do you want to reach?</h3>
+        <div class="filters__wrapper">
+            <h2>Gender /</h2><h3>/ Who do you want to reach?</h3>
             <p>Think about your product and business area</p>
             <form class="radio-button-group" action="">
                 <ul>
@@ -96,33 +115,16 @@
                 </ul>
             </form>
         </div>
-        <!-- END DATE -->
-        <div class="filtters__wrapper">
-            <h2>End Date /<h2><h3>/ When should the campaign end?</h3>
-            <p>This is to protect going to unwanted waters</p>
-            <input type="date">
-        </div>
-        <!-- BUDJET -->
-        <div class="filtters__wrapper">
-            <h2>Budget /<h2><h3>/ What is your advertising budget?</h3>
-            <p>This works as a roof cost, it may be less!</p>
-            <input type="number" placeholder="00">
-        </div>
+
         <!-- Summary -->
         <div class="summary">
             <h1>Summary</h1>
             <div class="value">
                 <span class="value__number" id="estimate">0</span>
-                <span class="value__label">Reach Estimate</span>
+                <span class="value__label" style="margin-bottom: 4rem">Estimate crowd to reach</span>
             </div>
-            <!--
-            <div class="value">
-                <span class="value__number">28.5</span>
-                <span class="value__label">Average Age</span>
-            </div>
-            -->
             <div class="summary__footer">
-                <button class="primary">Place Order</button>
+                <button onclick="location.href='animation.html'" type="button" class="primary">Go</button>
             </div>
         </div>
     </div>

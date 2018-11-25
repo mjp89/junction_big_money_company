@@ -2,7 +2,7 @@ $(function () {
     var crowdWanted = 0;
     var cpm = 0;
 
-    $("#crowdSlider").change(function (asd) {
+    $("#crowdSlider").change(function () {
         crowdWanted = Number.parseFloat($(this).val());
         calculateEstimate();
     });
@@ -25,12 +25,12 @@ $(function () {
     });
 
     function calculateEstimate() {
-        if (cpm <= 0) {
-            return;
-        }
         if (crowdWanted <= 0) {
             return;
         } 
+        if (cpm <= 0) {
+            return;
+        }
         if (agePercentage <= 0) {
             return;
         }
@@ -40,5 +40,4 @@ $(function () {
         crowdWanted = Math.round(crowdWanted * agePercentage);
         $("#estimate").text(crowdWanted);
     }
-
-});
+}); 

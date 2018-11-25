@@ -1,0 +1,69 @@
+$(function() {
+
+    var $this = $('body');
+    var offset = $this.offset();
+    var width = $this.width();
+    var height = $this.height();
+
+    var centerX = offset.left + width / 2;
+    var centerY = offset.top + height / 2;
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    const showMarker = (x, y, price) => {
+        console.log("x: " + x);
+        console.log("y: " + y);
+        console.log("draw marker");
+        const ball = "<div class='ball' style='top:" + y + "px;left:" + x + "px;'></div>";
+        const infoBox = "<div class='ball-info-box' style='top:" + (y-30) + "px;left:" + (x+15) + "px;'><p>" + price + "€</p></div>";
+        $('body').append(ball, infoBox);
+    }
+
+    const hideMarker = () => {
+        $('.ball').hide('slow', function(){$('.ball').remove();});
+        $('.ball-info-box').hide('scale', function(){$('.ball-info-box').remove()}) 
+    }
+
+    async function mainloop() {
+        const markerpoints = generateRandomPoints(50);
+        for (const point of markerpoints) {
+            showMarker(point.x, point.y, point.price);
+            await sleep(1000);
+            hideMarker();
+            await sleep(1000);
+        }
+    }
+
+    $('button').click(function() {
+        mainloop();
+    });
+
+
+    const generateRandomPoints = (number_of_points) => {
+        var $this = $('body');
+        var offset = $this.offset();
+        var width = $this.width();
+        var height = $this.height();
+
+        var centerX = offset.left + width / 2;
+        var centerY = offset.top + height / 2;
+
+        const markerpoints = [
+            {x: 660, y: 500, price: 50},
+            {x: 630, y: 470, price: 51},
+            {x: 640, y: 420, price: 52},
+            {x: 645, y: 450, price: 53},
+            {x: 620, y: 410, price: 54},
+            {x: 732, y: 500, price: 54},
+            {x: 720, y: 550, price: 54},
+            {x: 620, y: 430, price: 54},
+            {x: 710, y: 570, price: 54},
+            {x: 645, y: 470, price: 53},
+            {x: 620, y: 510, price: 54},
+            {x: 732, y: 500, price: 54}
+        ]
+        return markerpoints; 
+    }
+}); 

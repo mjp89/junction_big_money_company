@@ -14,30 +14,43 @@ body {
 
 .container {
     position: relative;
-    padding: 5rem 5rem 2.5rem;
+    padding: 5rem 15rem 2.5rem;
     height: 100%;
 }
 
-.filtters__wrapper {
+.slogan {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00e086;
+}
+
+.filters__wrapper {
     margin-bottom: 5rem;
 }
 
-.filtters__wrapper h2,
-.filtters__wrapper h3 {
+.filters__wrapper h2,
+.filters__wrapper h3 {
     display: inline-block;
 }
 
-.filtters__wrapper p {
+.filters__wrapper p {
     margin: 0 0 2rem;
     color: #888;
+}
+
+.filtters__wrapper__timeFrame span.filters__divider {
+    display: inline-block;
+    margin: 0 2rem;
+    vertical-align: sub;
+    font-size: 4rem;
 }
 
 .summary {
     position: fixed;
     display: flex;
     flex-direction: column;
-    top: 1rem;
-    right: 1rem;
+    top: 4rem;
+    right: 4rem;
     width: 30rem;
     background: #fff;
     padding: 2rem;
@@ -55,14 +68,58 @@ body {
     flex-direction: column;
 }
 
+.value__number {
+   font-size: 4rem;
+}
+
 .value__label {
     font-size: 2rem;
     font-weight: 800;
     color: #00e086;
 }
 
-.value__number {
-    font-size: 4rem;
+.ball {
+  height: 25px;
+  width: 25px;
+  background-image: linear-gradient(to top, #990ae3 0%, #fbc2eb 100%);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  transform-origin: center;
+  animation: createActionMarker .25s;
+}
+
+.ball-info-box {
+    height: 25px;
+    width: 40px;
+    border: 1px solid black;
+    position: absolute;
+    top:55px;
+    left: 105px;
+    border-radius: 6px;
+    animation: createActionMarker .25s;
+}
+
+.ball-info-box p{
+    position: relative;
+    top: 50%;
+    transform-origin: center;
+    transform: translateY(-50%); 
+    text-align:center;
+    margin:auto;
+}
+
+.ball-info-line {
+    animation: createActionMarker .25s;
+}
+
+@keyframes createActionMarker {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .summary__footer button {
@@ -71,5 +128,5 @@ body {
 
 .footer {
     height: 5rem;
-    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    background-image: linear-gradient(to right, #000 0%, #cc01ff 100%);
 }
