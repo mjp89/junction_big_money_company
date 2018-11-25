@@ -18,7 +18,7 @@ $(function () {
         agePercentage = 1;
         $('.age_group').each(function (i, obj) {
             if ($(obj).is(':checked')) {
-                agePercentage -= 0.05;
+                agePercentage += 0.05;
             } 
         });
         calculateEstimate();
