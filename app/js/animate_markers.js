@@ -53,18 +53,18 @@ $(function() {
         var centerY = offset.top + height / 2;
 
         const markerpoints = [
-            {x: 660, y: 500, price: 50},
+            {x: 800, y: 300, price: 50},
             {x: 630, y: 470, price: 51},
             {x: 640, y: 420, price: 52},
             {x: 645, y: 450, price: 53},
-            {x: 620, y: 410, price: 54},
-            {x: 732, y: 500, price: 54},
-            {x: 720, y: 550, price: 54},
-            {x: 620, y: 430, price: 54},
-            {x: 710, y: 570, price: 54},
-            {x: 645, y: 470, price: 53},
-            {x: 620, y: 510, price: 54},
-            {x: 732, y: 500, price: 54}
+            {x: 800, y: 320, price: 54},
+            {x: 732, y: 320, price: 54},
+            {x: 810, y: 380, price: 54},
+            {x: 760, y: 350, price: 54},
+            {x: 710, y: 390, price: 54},
+            {x: 800, y: 300, price: 53},
+            {x: 620, y: 315, price: 54},
+            {x: 732, y: 350, price: 54}
         ]
         return markerpoints; 
     }
