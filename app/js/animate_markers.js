@@ -37,7 +37,9 @@ $(function() {
     }
 
     $('button').click(function() {
-        mainloop();
+        setTimeout(() => {
+            mainloop(); 
+        }, 700);
     });
 
 

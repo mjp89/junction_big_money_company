@@ -8,9 +8,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/animation.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
-  <link rel="stylesheet" href="styles/animation.css">
-  <link rel="stylesheet" href="styles/font-properties.css">
-  <link rel="stylesheet" href="styles/components.css">
+	<link rel="stylesheet" href="styles/animation.css">
+	<link rel="stylesheet" href="styles/font-properties.css">
+	<link rel="stylesheet" href="styles/components.css">
 
 	<script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
 </head>
@@ -18,25 +18,21 @@
 <body>
 	<div id="map"></div>
 	<div class="map-details">
-			<div class="start-button">
-				<button class="primary">start!</button>
-			</div>
-			<div class="map-details__data-wrapper">
-				<div class="map-details__values">
-					<span class="map-details__values__number">10/10/92</span>
-					<span class="map-details__values__label">Date</span>
-				</div>
-				<div class="map-details__values">
-					<span class="map-details__values__number">12029</span>
-					<span class="map-details__values__label">Crowd</span>
-				</div>
-				<div class="map-details__values">
-					<span class="map-details__values__number">10 000</span>
-					<span class="map-details__values__label">Budget</span>
-				</div>
-			</div>
-			<button onclick="location.href='report.html'" type="button" class="primary">Next</button>
+		<div class="start-button">
+			<button class="primary" id="start_ads">start!</button>
 		</div>
+		<div class="map-details__data-wrapper">
+			<div class="map-details__values">
+				<span class="map-details__values__number" id="running_date">1.1.2018</span>
+				<span class="map-details__values__label">Date</span>
+			</div>
+			<div class="map-details__values">
+				<span class="map-details__values__number" id="running_crowd">0</span>
+				<span class="map-details__values__label">Crowd</span>
+			</div>
+		</div>
+		<button onclick="location.href='report.html'" type="button" class="primary">Next</button>
+	</div>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD0s0urCQFzNXxCRcl2_DJN59IKxp3fpA&callback=initMap"></script>
 	<script src="./js/animate_markers.js"></script>
 </body>
