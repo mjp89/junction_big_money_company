@@ -39,7 +39,7 @@ $(function() {
     $('button').click(function() {
         setTimeout(() => {
             mainloop(); 
-        }, 700);
+        }, 2500);
     });
 
 
